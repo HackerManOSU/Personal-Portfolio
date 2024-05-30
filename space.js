@@ -103,5 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         let slowDownInterval = setInterval(slowDown, 5);
-    }, 5000);
+    }, 2000);
+
+    setTimeout(() => {
+        document.querySelector('.Title-Text').classList.add('text-visible');
+    }, 1000); // Wait for 5 seconds before making the text visible
+    
 });
