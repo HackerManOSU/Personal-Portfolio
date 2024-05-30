@@ -55,14 +55,14 @@ canvas {
     text-align: center;
     width: 100%;
     font-size: 0vh; /* Ensure the font size is visible */
-    transition: font-size 2s ease-in-out;
+    transition: font-size 5s ease-in-out;
 
 }
 
 
 
 .text-visible {
-    font-size: 3.5vh; /* Final visible font size */
+    font-size: 3.5vmin; /* Final visible font size */
     opacity: 1;
 }
 
@@ -71,7 +71,7 @@ canvas {
 }
 
 .resume {
-    background-color: green;
+    background-color: white;
 }
 
 .about {

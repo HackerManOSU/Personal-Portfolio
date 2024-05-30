@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(slowDownInterval);
             }
         };
-        let slowDownInterval = setInterval(slowDown, 5);
+        let slowDownInterval = setInterval(slowDown, 3);
     }, 2000);
 
     setTimeout(() => {

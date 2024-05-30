@@ -4,14 +4,23 @@ var TextRotate = function(el, toRotate, period) {
     this.loopNum = 0;
     this.period = parseInt(period, 10) || 2000;
     this.text = '';
+    this.initialDelay = true; // Use a flag to manage the initial delay
     this.tick();
     this.isDeleting = false;
-    this.firstIteration = true;
 };
 
 TextRotate.prototype.tick = function() {
     var i = this.loopNum % this.toRotate.length;
     var fullText = this.toRotate[i];
+
+    if (this.initialDelay) {
+        // Wait for this.period * 5 before starting the normal cycle
+        setTimeout(() => {
+            this.initialDelay = false;
+            this.tick(); // Start the regular ticking process
+        }, this.period * 5);
+        return; // Stop further execution in the initial delay phase
+    }
 
     if (this.isDeleting) {
         // Use substring based on character length rather than string length
@@ -24,30 +33,23 @@ TextRotate.prototype.tick = function() {
     this.el.innerHTML = '<span class="wrap">' + this.text + '</span>';
 
     var that = this;
-    
-    //speed can be controlled from here
     var delta = 200 - Math.random() * 100;
 
-    if (this.isDeleting) { delta /= 4; }
+    if (this.isDeleting) { delta /= 2; }
 
     if (!this.isDeleting && this.text === fullText) {
-        if (i === 0 && this.firstIteration) { // Check if it's the first element and first iteration
-            delta = this.period * 5; // Extend the period for the first element
-            this.firstIteration = false; // Ensure this only happens once
-        } else {
-            delta = this.period;
-        }
+        delta = this.period;
         this.isDeleting = true;
     } else if (this.isDeleting && this.text === '') {
         this.isDeleting = false;
         this.loopNum++;
         delta = 500;
     }
+
     setTimeout(function() {
         that.tick();
     }, delta);
 };
-
 
 window.onload = function() {
     var elements = document.getElementsByClassName('text-rotate');
