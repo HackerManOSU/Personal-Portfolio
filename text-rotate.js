@@ -18,7 +18,7 @@ TextRotate.prototype.tick = function() {
         setTimeout(() => {
             this.initialDelay = false;
             this.tick(); // Start the regular ticking process
-        }, this.period * 5);
+        }, this.period * 6);
         return; // Stop further execution in the initial delay phase
     }
 

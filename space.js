@@ -107,6 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
         document.querySelector('.Title-Text').classList.add('text-visible');
-    }, 1000); // Wait for 5 seconds before making the text visible
+    }, 1000); // Wait for 1 seconds before making the text visible
     
 });
