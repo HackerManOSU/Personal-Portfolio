@@ -8,11 +8,12 @@
     margin: 0;
     padding: 0;
     color: white;
-   /*  cursor: url(/images/cursor.png), pointer; */
 }
 
 body {
     background-color: var(--main-background-color);
+    cursor: url(/images/cursor.png), pointer;
+    scroll-behavior: smooth;
 
 }
 

@@ -96,3 +96,47 @@ canvas {
     color: white;
     z-index: 3;
 }
+
+.space a:hover {
+    cursor: url(/images/hand-cursor.png), pointer;
+}
+
+.fa-brands {
+    transition: all 1s ease;
+}
+
+.fa-brands:hover {
+    font-size: 5rem;
+    transition: glow 1s ease-in-out;
+    transition: font-size 0.5s ease-in-out;
+
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+
+}
+
+.fa-angles-down {
+    transition: all 1s ease;
+}
+
+.fa-angles-down:hover {
+    transition: 3s ease-in-out;
+    box-shadow: #0ff;
+
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+
+}
+
+@-webkit-keyframes glow {
+
+    from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+    }
+    to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;
+    }
+
+}

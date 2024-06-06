@@ -6,7 +6,12 @@
     justify-content: center;
     font-size: 2.5vmin;
     min-height: 50vh;
+    scroll-behavior: smooth;
 
+}
+
+#resume {
+    scroll-behavior: smooth;
 }
 
 .resume-heading {
