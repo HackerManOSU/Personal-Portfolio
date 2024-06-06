@@ -1,0 +1,98 @@
+.space {
+    position: relative;
+    margin: 0;
+}
+
+canvas {
+    display: block;
+    background-color: black;
+    width: 100vw;
+    z-index: 0;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.Title-Text {
+    position: absolute; /* Changed from fixed to absolute */
+    top: 50%; /* Center vertically in the space section */
+    left: 50%; /* Center horizontally in the space section */
+    transform: translate(-50%, -50%); /* Adjusts the position to truly center the element */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 0vh; /* Ensure the font size is visible */
+    transition: font-size 5s ease-in-out;
+
+}
+
+.Links {
+    position: absolute; /* Changed from fixed to absolute */
+    top: 57%; /* Center vertically in the space section */
+    left: 50%; /* Center horizontally in the space section */
+    transform: translate(-50%, 100%); /* Adjusts the position to truly center the element */
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 0vh; /* Ensure the font size is visible */
+    transition: font-size 5s ease-in-out;
+
+}
+
+.text-visible {
+    font-size: 3.5vmin; /* Final visible font size */
+    opacity: 1;
+}
+
+.wobble {
+    animation:wobble 10s ease-in-out infinite alternate;
+}
+
+@keyframes wobble {
+    33% {
+      transform: rotate(3deg);
+    }
+    66% {
+      transform: rotate(-3deg);
+    }
+}
+
+.scroll-container {
+
+    position: absolute; /* Changed from fixed to absolute */
+    bottom: 5%; /* Center vertically in the space section */
+    left: 50%; /* Center horizontally in the space section */
+    transform: translate(-50%, -50%); /* Adjusts the position to truly center the element */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    font-size: 3vmin;
+    transition: opacity 5s ease-in-out;
+
+
+}
+
+.text-visible-2 {
+    opacity: 1;
+}
+
+.scroll-container i {
+    color: white;
+    z-index: 3;
+}

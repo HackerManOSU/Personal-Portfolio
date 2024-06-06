@@ -1,0 +1,52 @@
+.resume {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5vmin;
+    min-height: 50vh;
+
+}
+
+.resume-heading {
+    background-color: aqua;
+    color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.resume-experience {
+    background-color: green;
+    height: 100vh;
+    width: 100%;
+}
+
+#experience {
+    scroll-behavior: smooth;
+}
+
+.resume-projects {
+    background-color: blue;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.resume-certifications {
+    background-color: purple;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.resume-skills {
+    background-color: yellow;
+    height: 100vh;
+    width: 100%;
+    
+}

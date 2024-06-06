@@ -1,0 +1,45 @@
+:root {
+    scroll-behavior: smooth;
+    --main-background-color: black;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+   /*  cursor: url(/images/cursor.png), pointer; */
+}
+
+body {
+    background-color: var(--main-background-color);
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensures no scroll bar on the body */
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    height: 100vh; /* Height is crucial for scrolling */
+    overflow-y: scroll; /* Enables vertical scrolling */
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+footer {
+    height: 10vh;
+    background-color: white;
+    scroll-snap-align: start;
+    margin: 0;
+}
