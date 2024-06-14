@@ -1,0 +1,10 @@
+:root {
+    scroll-behavior: smooth;
+    --main-background-color: black;
+}
+
+.footer {
+    background-color: teal;
+    height: 300vh;
+    color: var(--main-background-color);
+}

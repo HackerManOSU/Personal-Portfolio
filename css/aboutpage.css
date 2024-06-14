@@ -1,0 +1,9 @@
+:root {
+    scroll-behavior: smooth;
+    --main-background-color: black;
+}
+
+.about-page {
+    background-color: red;
+    height: 50vh;
+}

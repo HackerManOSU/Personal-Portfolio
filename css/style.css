@@ -17,6 +17,14 @@ body {
 
 }
 
+.heading {
+    background-color: aquamarine;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -28,7 +36,7 @@ html, body {
     overflow-y: scroll; /* Enables vertical scrolling */
 }
 
-section {
+.main-sections {
     scroll-snap-align: start;
     scroll-snap-stop: always;
 

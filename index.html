@@ -8,10 +8,16 @@
 
     <link rel="icon" href="/images/earth.png">
 
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/space.css">
     <link rel="stylesheet" href="./css/resume.css">
     <link rel="stylesheet" href="./css/aboutme.css">
+    <link rel="stylesheet" href="./css/aboutpage.css">
+    <link rel="stylesheet" href="./css/footer.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -24,7 +30,7 @@
 
     <main>
 
-        <section class="space">
+        <section class="space main-sections" >
 
             <canvas id="space"></canvas>
 
@@ -42,11 +48,11 @@
 
             <div class="Links">
 
-                <a href="https://www.linkedin.com/in/zane-garvey/"> <i id="LinkinInLogo" class="fa-brands fa-linkedin fa-xl wobble rainbow"></i></a>
+                <a href="https://www.linkedin.com/in/zane-garvey/" target="_blank"> <i id="LinkinInLogo" class="fa-brands fa-linkedin fa-xl wobble rainbow"></i></a>
 
-                <a href="https://github.com/HackerManOSU"> <i id="GithubLogo" class="fa-brands fa-github fa-xl wobble"></i></a>
+                <a href="https://github.com/HackerManOSU" target="_blank"> <i id="GithubLogo" class="fa-brands fa-github fa-xl wobble"></i></a>
                 
-                <a href="https://instagram.com/zanegarvey"> <i id="Instagram-icon" class="fa-brands fa-instagram fa-xl wobble"></i></a>
+                <a href="https://instagram.com/zanegarvey" target="_blank"> <i id="Instagram-icon" class="fa-brands fa-instagram fa-xl wobble"></i></a>
                 
             </div>
 
@@ -59,51 +65,170 @@
 
         </section>
 
-        <section class="resume" id="resume">
+        <section class="resume main-sections" id="resume">
 
-            <section class="resume-heading">
+            <section class="resume-projects" id="projects">
 
-                <h2>My E-Resume</h2>
-
-                <div class="resume-sections">
-
-                    <a href=#experience> Experience </a>
-
-                </div>
+                <h2 class="resume-titles" id="projects-title">Projects</h2>
 
             </section>
+
             
             <section class="resume-experience" id="experience">
 
-                <h2>Testing</h2>
-
-            </section>
-
-            <section class="resume-projects">
-
-                <h2>Projects</h2>
+                <h2 class="resume-titles" id="exp-title">Experience</h2>
 
             </section>
 
             <section class="resume-certifications" id="certifications">
 
-                <h2>Certifications</h2>
+                <h2 class="resume-titles" id="certs-title">Certifications</h2>
+
+                <div class="certifications-content">
+
+                    <h3>Google Cybersecurity Professional</h3>
+
+                    <h3>Amazon Web Services Solution Architect Associate - AWS SAA (In Progress)</h3>
+    
+                    <h3>COMPTIA Security+ (In Progress)</h3>
+
+                </div>
 
             </section>
 
-            <section class="resume-skills">
+            <section class="resume-skills" id="skills">
 
-                <h2>Skills</h2>
+                <h2 class="resume-titles" id="skills-title">Skills</h2>
+
+                <div class="skills-content">
+
+                    <div class="skills-programming">
+
+                        <h3>Programming</h3>
+
+                        <div class="programming-icons">
+
+                            <img class="svg-icons" src="/images/skills/react-javascript-js-framework-facebook.svg" alt="">
+
+                            <img class="svg-icons" src="/images/skills/tailwind-css.svg" alt="">
+        
+                            <img class="svg-icons" src="/images/skills/typescript-icon.svg" alt="">
+        
+                            <img class="svg-icons" src="/images/skills/javascript-js.svg" alt="">
+        
+                            <img class="svg-icons" src="/images/skills/file-type-html.svg" alt="">
+        
+                            <img class="svg-icons" src="/images/skills/file-type-css.svg" alt="">
+        
+                            <img class="svg-icons" src="/images/skills/python.svg" alt="">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skills-aws">
+
+                        <h3>AWS</h3>
+
+                        <img class="svg-icons" src="/images/skills/aws.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/route53.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_Amazon-CloudFront_32.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_Amazon-S3-on-Outposts_32.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_Amazon-DynamoDB_32.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_AWS-Lambda_32.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_AWS-WAF_32.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_Amazon-EC2_32.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/Arch_Amazon-ECS-Anywhere_32.svg" alt="">
+
+                    </div>
+
+                    <div class="skills-cyber">
+
+                        <h3>Cybersecurity</h3>
+
+                        <img class="svg-icons" src="/images/skills/splunk.svg" alt="">
+
+                        <img class="svg-icons" src="/images/skills/wireshark.svg" alt="">
+
+                    </div>
+
+                    
+
+
+                </div>
 
             </section>
 
-            <section class="resume-"></section>
+            <section class="resume-link">
+
+                <h3>Download My Resume <a href="/images/ZANERESUME.pdf" target="_blank">Here</a></h3>
+
+            </section>
 
         </section>
 
-        <section class="about-me" id="about-me">
+        <section class="about-page main-sections">
 
-            <h2>Testing</h2>
+            <div class="about-page-heading heading">
+
+                <h2>About This Page!</h2>
+
+            </div>
+    
+        </section>
+
+        <section class="about-me main-sections" id="about-me">
+
+            <div class="about-me-heading heading">
+
+                <h2>So Who Am I?</h2>
+
+            </div>
+
+            <div class="about-me-content">
+
+                <img src="/images/about-me.jpeg" alt="photo of myself" id="about-me-img">
+
+                <div class="about-me-text">
+
+
+                    <h3>Hellur! My name is Zane Garvey and I am an aspiring software engineer and cloud architect.</h3>
+
+
+                    <p id="about-me-paragraph">
+    
+                        Hellur, my name is Zane Garvey! <br><br>
+                        I grew up in Milwaukie, Oregon, where I graduated in 2022. I am currently a second-year student at Oregon State University, where I am pursuing a degree in Computer Science with a focus in Cyber Security and Human-Computer Interaction. <br><br>
+                        Outside of academics and career aspirations, I have too many hobbies to keep track of. I love playing instruments, I play acoustic and electric guitar (although acoustic is definitely preferred), and occasionally the piano; I ride dirt bikes as often as I can; I love MMA and BJJ, watching and training; I love taking care of my houseplants (and hopefully outdoor plants once I'm out of my apartment); I love fishing; I love working on vehicles, specifically my car; And I love doing all of the above with my beautiful girlfriend. I actually love coding and designing things, hence why I am pursuing this degree; and believe it or not, the list goes on too. My love for such diverse hobbies allows me find common ground with almost everyone I meet, and has vastly grown my communication skills. 
+                        
+                    </p>
+
+
+                </div>
+
+            </div>
+
+            <div class="about-me-carousel">
+
+                <div class="carousel">
+                    <div><img src="https://picsum.photos/300/200?random=1"></div>
+                    <div><img src="https://picsum.photos/300/200?random=2"></div>
+                    <div><img src="https://picsum.photos/300/200?random=3"></div>
+                    <div><img src="https://picsum.photos/300/200?random=4"></div>
+                    <div><img src="https://picsum.photos/300/200?random=5"></div>
+                    <div><img src="https://picsum.photos/300/200?random=6"></div>
+                  </div>
+
+            </div>
 
         </section>
 
@@ -117,18 +242,30 @@
 
             <div class="Footer-Links">
 
-                <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/zane-garvey/"> <i id="LinkinInLogo" class="fa-brands fa-linkedin fa-xl wobble rainbow"></i></a>
+
+                <a href="https://github.com/HackerManOSU"> <i id="GithubLogo" class="fa-brands fa-github fa-xl wobble"></i></a>
+                
+                <a href="https://instagram.com/zanegarvey"> <i id="Instagram-icon" class="fa-brands fa-instagram fa-xl wobble"></i></a>
 
             </div>
+
+            <a href="#space">Back to the Top!</a>
 
         </div>
 
     </footer>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/slick/slick.min.js"></script>
+
 
 
     <script src="space.js"></script>
     <script src="text-rotate.js"></script>
     <script src="app.js"></script>
+    <script src="carousel.js"></script>
     
 
 </body>

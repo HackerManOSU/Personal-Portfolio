@@ -1,10 +1,15 @@
+:root {
+    scroll-behavior: smooth;
+    --main-background-color: black;
+}
+
 .resume {
     background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2.5vmin;
+    font-size: 1.5rem;
     min-height: 50vh;
     scroll-behavior: smooth;
 
@@ -14,44 +19,146 @@
     scroll-behavior: smooth;
 }
 
-.resume-heading {
-    background-color: aqua;
-    color: black;
-    width: 100%;
+.resume-sections {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 5vh;
+    width: 100%;
+    font-size: 2.5vmin;
     align-items: center;
+    justify-content: space-evenly;
+    background-color: yellow;
+}
+
+.resume-sections a {
+    text-decoration: none;
+    
+}
+
+.resume-sections a {
+    transition: all 1s ease;
 
 }
 
+.resume-sections a:hover {
+    transition: 3s ease-in-out;
+    box-shadow: #0ff;
+
+    -webkit-animation: glow 2s ease-in-out infinite alternate;
+    -moz-animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
+    cursor: url(/images/hand-cursor.png), pointer;
+
+}
+
+/* +++++++++++ PROJECTS +++++++++++ */
+
+.resume-projects {
+    background-color: blue;
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+   
+}
+
+
+
+/* +++++++++++ EXPERIENCE +++++++++++ */
+
 .resume-experience {
     background-color: green;
-    height: 100vh;
+    height: 20vh;
     width: 100%;
+    text-align: center;
 }
 
 #experience {
     scroll-behavior: smooth;
 }
 
-.resume-projects {
-    background-color: blue;
-    height: 100vh;
-    width: 100%;
-    
-}
+/* +++++++++++ CERTIFICATIONS +++++++++++ */
 
 .resume-certifications {
     background-color: purple;
-    height: 100vh;
+    height: 20vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 
-.resume-skills {
-    background-color: yellow;
-    height: 100vh;
+#certs-title {
+    font-size: 2rem;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+}
+
+.certifications-content {
+    display: flex;
     width: 100%;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.resume-certifications h3 {
+    font-size: 1.5rem;
+}
+
+/* +++++++++++ SKILLS +++++++++++ */
+
+.resume-skills {
+    min-height: 30vh;
+    background-color: grey;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
+}
+
+.skills-content {
+    display: flex;
+    width: 100%;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: inherit;
+}
+
+.skills-programming {
+    background-color: red;
+
+    justify-content: space-evenly;
+}
+
+.programming-icons {
+    background-color: blue;
+    display: flex;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#skills-title {
+    font-size: 2rem;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+}
+
+/* +++++++++++ LINK +++++++++++ */
+
+.resume-link {
+    background-color: blueviolet;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 5vh;
+
 }
