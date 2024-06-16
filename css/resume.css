@@ -4,7 +4,7 @@
 }
 
 .resume {
-    background-color: red;
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
 
 .resume-sections {
     display: flex;
-    height: 5vh;
+    height: 100%;
     width: 100%;
     font-size: 2.5vmin;
     align-items: center;
@@ -53,22 +53,92 @@
 /* +++++++++++ PROJECTS +++++++++++ */
 
 .resume-projects {
-    background-color: blue;
-    height: 20vh;
+
+    background-color: black;
     width: 100%;
     text-align: center;
-   
+    max-width: 1200px; /* Limits max width for better aesthetics on larger screens */
+    text-align: center;
+    margin: 20px;
+    box-sizing: border-box;
+
 }
+
+/* GRID */
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to three columns */
+    gap: 3vw;
+    padding: 3vw;
+    justify-content: center;
+}
+
+/* Adjust grid for smaller screens */
+@media (max-width: 600px) {
+    #grid {
+        grid-template-columns: 1fr; /* Switch to one column on small screens */
+    }
+}
+
+/* PROJECTS */
+
+.project-item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Keeps everything neat */
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Only scaling transformation */
+}
+
+.project-item:hover img {
+    transform: scale(1.05);
+}
+
+.loading-icon {
+    position: absolute;
+    top: 0; /* Cover the entire item */
+    left: 0;
+    width: 100%; /* Cover the width */
+    height: 100%; /* Cover the height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.project-item:hover .loading-icon {
+    display: flex; /* Display on hover */
+    cursor: url(/images/hand-cursor.png), pointer;
+
+}
+
+.loading-icon img {
+    width: 120px; /* Fixed size for SVG */
+    height: 120px;
+}
+
+
 
 
 
 /* +++++++++++ EXPERIENCE +++++++++++ */
 
 .resume-experience {
-    background-color: green;
+    background-color: black;
     height: 20vh;
     width: 100%;
     text-align: center;
+
 }
 
 #experience {
@@ -78,7 +148,7 @@
 /* +++++++++++ CERTIFICATIONS +++++++++++ */
 
 .resume-certifications {
-    background-color: purple;
+    background-color: black;
     height: 20vh;
     width: 100%;
     display: flex;
@@ -100,7 +170,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    background-color: lightblue;
+    background-color: black;
 }
 
 .resume-certifications h3 {
@@ -110,7 +180,7 @@
 /* +++++++++++ SKILLS +++++++++++ */
 
 .resume-skills {
-    min-height: 30vh;
+    height: 100%;
     background-color: grey;
     width: 90%;
     display: flex;
@@ -130,7 +200,7 @@
 }
 
 .skills-programming {
-    background-color: red;
+    background-color: green;
 
     justify-content: space-evenly;
 }

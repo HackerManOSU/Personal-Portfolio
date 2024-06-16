@@ -44,6 +44,7 @@
     background-color: black;
 }
 
+/*
 @media screen and (max-width: 995px) {
     .about-me-content {
         flex-direction: column;
@@ -58,7 +59,7 @@
         margin-top: 0;
 
     }
-}
+}*/
 
 
 /* +++++ GALLERY +++++ */
@@ -69,6 +70,9 @@
     margin-top: 12vh;
     height: 20vh;
     background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel{
