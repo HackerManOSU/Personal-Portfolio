@@ -25,6 +25,15 @@ body {
     justify-content: center;
 }
 
+.main-sections {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.main-sections.show {
+    opacity: 1;
+}
+
 html, body {
     height: 100%;
     margin: 0;

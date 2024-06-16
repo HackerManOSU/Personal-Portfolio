@@ -78,7 +78,9 @@
 @media (max-width: 600px) {
     #grid {
         grid-template-columns: 1fr; /* Switch to one column on small screens */
+        gap: 10vw;
     }
+
 }
 
 /* PROJECTS */
@@ -125,6 +127,16 @@
 .loading-icon img {
     width: 120px; /* Fixed size for SVG */
     height: 120px;
+}
+
+/* Adjust grid for smaller screens */
+@media (max-width: 600px) {
+    .project-item {
+        width: 66%;
+        align-self: center;
+        justify-self: center;
+    }
+
 }
 
 
