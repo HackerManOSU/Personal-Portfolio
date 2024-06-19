@@ -4,7 +4,7 @@
 }
 
 * {
-    font-family: sans-serif;
+    font-family: 'Arial';
     margin: 0;
     padding: 0;
     color: white;
@@ -18,12 +18,32 @@ body {
 }
 
 .heading {
-    background-color: aquamarine;
+    background-color: black;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.progress-container {
+    width: 100%;
+    height: 15px;
+    background: black;
+    border-bottom: 1px solid white;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.progress-bar {
+    height: 15px;
+    background: white;
+    width: 0%;
+    position: absolute;
+    left: 50%; /* Position the start of the bar in the middle */
+    transform: translateX(-50%); /* Center the bar on its left edge at the middle */
+}
+
 
 .main-sections {
     opacity: 0;
@@ -38,26 +58,18 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Ensures no scroll bar on the body */
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     height: 100vh; /* Height is crucial for scrolling */
-    overflow-y: scroll; /* Enables vertical scrolling */
 }
 
 .main-sections {
+    scroll-behavior: smooth;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
 
 }
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-footer {
-    height: 10vh;
-    background-color: white;
-    scroll-snap-align: start;
-    margin: 0;
 }

@@ -106,8 +106,11 @@ canvas {
     cursor: url(/images/hand-cursor.png), pointer;
 }
 
+
+
 .fa-brands {
     transition: all 1s ease;
+    font-size: 3rem;
 }
 
 .fa-brands:hover {
@@ -118,6 +121,17 @@ canvas {
     -webkit-animation: glow 2s ease-in-out infinite alternate;
     -moz-animation: glow 2s ease-in-out infinite alternate;
     animation: glow 2s ease-in-out infinite alternate;
+
+}
+
+@media (max-width: 600px) {
+    .fa-brands {
+        font-size: 3rem;
+    }
+
+    .fa-brands:hover {
+        font-size: 4rem;
+    }
 
 }
 
@@ -138,7 +152,7 @@ canvas {
 @-webkit-keyframes glow {
 
     from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #fff;
     }
     to {
     text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff;

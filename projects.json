@@ -1,33 +1,66 @@
 [
     {
-        "name": "Project 1",
+        "title": "Project A",
+        "image": "https://picsum.photos/300/200?random=1",
+        "name": "Project A",
+        "description": "www.github.com",
+        "link": "https://example.com/projectA"
+    },
+    {
+        "title": "Project B",
+        "image": "https://picsum.photos/300/200?random=2",
+        "name": "Project B",
+        "description": "www.github.com",
+        "link": "https://example.com/projectB"
+    },
+    {
+        "title": "Project C",
+        "image": "https://picsum.photos/300/200?random=3",
+        "name": "Project C",
+        "description": "www.github.com",
+        "link": "https://example.com/projectB"
+    },
+    {
+        "title": "Project D",
         "image": "https://picsum.photos/300/200?random=4",
-        "link": "https://www.youtube.com"
+        "name": "Project D",
+        "description": "www.github.com",
+        "link": "https://example.com/projectB"
     },
     {
-        "name": "Project 2",
+        "title": "Project E",
         "image": "https://picsum.photos/300/200?random=5",
-        "link": "https://www.youtube.com"
+        "name": "Project E",
+        "description": "www.github.com",
+        "link": "https://example.com/projectE"
     },
     {
-        "name": "Project 3",
+        "title": "Project F",
         "image": "https://picsum.photos/300/200?random=6",
-        "link": "https://www.youtube.com"
+        "name": "Project F",
+        "description": "www.github.com",
+        "link": "https://example.com/projectF"
     },
     {
-        "name": "Project 4",
+        "title": "Project G",
         "image": "https://picsum.photos/300/200?random=7",
-        "link": "https://www.youtube.com"
+        "name": "Project G",
+        "description": "www.github.com",
+        "link": "https://example.com/projectG"
     },
     {
-        "name": "Project 5",
+        "title": "Project H",
         "image": "https://picsum.photos/300/200?random=8",
-        "link": "https://www.youtube.com"
+        "name": "Project H",
+        "description": "www.github.com",
+        "link": "https://example.com/projectH"
     },
     {
-        "name": "Project 6",
+        "title": "Project I",
         "image": "https://picsum.photos/300/200?random=9",
-        "link": "https://www.youtube.com"
+        "name": "Project I",
+        "description": "www.github.com",
+        "link": "https://example.com/projectI"
     }
-
+    
 ]

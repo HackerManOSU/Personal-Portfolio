@@ -8,7 +8,7 @@ $(document).ready(function() {
         });
     }, {
         rootMargin: '0px',
-        threshold: 0.1 // Adjust this value based on when you want the section to trigger
+        threshold: 0.3 // Adjust this value based on when you want the section to trigger
     });
 
     // Target all sections you want to animate
@@ -16,4 +16,18 @@ $(document).ready(function() {
         observer.observe(this);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Disable scrolling
+    document.body.style.overflow = 'hidden';
+
+    // Set the duration for scrolling locked
+    const lockDuration = 1000;
+
+    // After the lockDuration, re-enable scrolling
+    setTimeout(function() {
+        document.body.style.overflow = '';
+    }, lockDuration);
+});
+
 

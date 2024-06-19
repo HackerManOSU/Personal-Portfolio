@@ -5,6 +5,7 @@
 
 .footer {
     background-color: teal;
-    height: 300vh;
+    height: 10vh;
     color: var(--main-background-color);
+    scroll-snap-align: end;
 }

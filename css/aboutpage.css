@@ -5,5 +5,30 @@
 
 .about-page {
     background-color: red;
-    height: 50vh;
+    height: 100vh;
+    border-top: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.about-page h2 {
+    font-family: 'arial';
+    font-weight: 300;
+    font-size: 3rem;
+    text-decoration: underline;
+
+}
+
+.page-info {
+    background-color: blue;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+
 }

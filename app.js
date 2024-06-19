@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             // Prevent default anchor click behavior
-            e.preventDefault();
 
             // Store hash
             var targetId = this.getAttribute('href');
@@ -47,3 +46,12 @@ window.addEventListener('resize', resizeSVGs);
 
 // Call function on initial load
 resizeSVGs();
+
+document.addEventListener('scroll', updateProgressBar);
+
+function updateProgressBar() {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.pageYOffset;
+    const progress = (scrolled / totalHeight) * 100;
+    document.getElementById('progressBar').style.width = `${progress*1.5}%`; // Multiply by 2 to expand in both directions
+}
