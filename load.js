@@ -1,3 +1,4 @@
+
 // JQuery and Intersection Observer API to section page when in window
 $(document).ready(function() {
     const observer = new IntersectionObserver((entries) => {
@@ -8,10 +9,10 @@ $(document).ready(function() {
         });
     }, {
         rootMargin: '0px',
-        threshold: 0.3 // Adjust this value based on when you want the section to trigger
+        threshold: 0.1 // Adjust this value based on when you want the section to trigger
     });
 
-    // Target all sections you want to animate
+    // Target all sections to animate
     $('.main-sections').each(function() {
         observer.observe(this);
     });

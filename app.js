@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Select all links with hashes
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            // Prevent default anchor click behavior
+            e.preventDefault(); // Prevent default anchor click behavior
 
             // Store hash
             var targetId = this.getAttribute('href');
@@ -18,6 +18,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// JavaScript for handling smooth scrolling to sections larger than 100vh
+
+// Throttle function to limit the rate at which a function is executed
+function throttle(fn, wait) {
+    let isThrottling = false;
+    return function (...args) {
+        if (!isThrottling) {
+            fn.apply(this, args);
+            isThrottling = true;
+            setTimeout(() => {
+                isThrottling = false;
+            }, wait);
+        }
+    };
+}
+
+// Smooth scroll to a specific element
+function smoothScrollTo(element) {
+    window.scrollTo({
+        'behavior': 'smooth',
+        'top': element.offsetTop
+    });
+}
+
+// Detect scroll direction and scroll to the specific section accordingly
+function handleScroll(event) {
+    event.preventDefault();
+    const sections = document.querySelectorAll('.testing');
+    const scrollY = window.pageYOffset;
+    const direction = event.deltaY > 0 ? 1 : -1; // Determine scroll direction
+
+    for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const sectionStart = section.offsetTop;
+        const sectionEnd = sectionStart + section.offsetHeight;
+
+        if (scrollY >= sectionStart && scrollY < sectionEnd) {
+            if (direction > 0 && i < sections.length - 1) {
+                smoothScrollTo(sections[i + 1]); // Scroll down to next section
+            } else {
+                break
+            }
+        }
+    }
+}
+
+document.addEventListener('wheel', throttle(handleScroll, 1000), {passive: false});
+
+
+
 
 
 // Stopping arrow bounce
@@ -53,5 +105,5 @@ function updateProgressBar() {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.pageYOffset;
     const progress = (scrolled / totalHeight) * 100;
-    document.getElementById('progressBar').style.width = `${progress*1.5}%`; // Multiply by 2 to expand in both directions
+    document.getElementById('progressBar').style.width = `${progress*1}%`; // Multiply by 2 to expand in both directions
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smooth Scroll Snapping</title>
+<style>
+  /* Basic styling for visibility */
+  body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+  }
+</style>
+</head>
+<body>
+<section id="main-section1">Section 1</section>
+<section id="main-section2">Section 2</section>
+<section id="main-section3">Section 3</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('section');
+  let currentSectionIndex = 0;
+  
+  window.addEventListener('scroll', () => {
+    let nearestSectionIndex = 0;
+    let smallestDistance = Infinity;
+
+    sections.forEach((section, index) => {
+      const distance = Math.abs(section.getBoundingClientRect().top);
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        nearestSectionIndex = index;
+      }
+    });
+
+    if (currentSectionIndex !== nearestSectionIndex) {
+      currentSectionIndex = nearestSectionIndex;
+      window.scrollTo({
+        top: sections[currentSectionIndex].offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>

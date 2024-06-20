@@ -89,8 +89,6 @@ canvas {
     opacity: 0;
     font-size: 3vmin;
     transition: opacity 5s ease-in-out;
-
-
 }
 
 .text-visible-2 {

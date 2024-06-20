@@ -1,5 +1,5 @@
 :root {
-    scroll-behavior: smooth;
+    /*scroll-behavior: smooth;*/
     --main-background-color: black;
 }
 
@@ -10,10 +10,17 @@
     color: white;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    height: 100vh; /* Height is crucial for scrolling */
+}
+
 body {
     background-color: var(--main-background-color);
     cursor: url(/images/cursor.png), pointer;
-    scroll-behavior: smooth;
 
 }
 
@@ -29,7 +36,8 @@ body {
     width: 100%;
     height: 15px;
     background: black;
-    border-bottom: 1px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     position: sticky;
     top: 0;
     z-index: 99;
@@ -44,7 +52,6 @@ body {
     transform: translateX(-50%); /* Center the bar on its left edge at the middle */
 }
 
-
 .main-sections {
     opacity: 0;
     transition: opacity 1s ease-out;
@@ -54,19 +61,11 @@ body {
     opacity: 1;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
-    height: 100vh; /* Height is crucial for scrolling */
-}
 
-.main-sections {
-    scroll-behavior: smooth;
+.testing {
+    /*
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: normal; */
 
 }
 

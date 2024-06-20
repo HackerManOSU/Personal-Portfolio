@@ -10,15 +10,12 @@
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    scroll-behavior: smooth;
-    border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
-
-
 }
 
 .resume h2 {
     font-family: 'arial';
+    padding-top: 50px;
     font-weight: 200;
     font-size: 3rem;
     text-decoration: underline;
@@ -91,8 +88,11 @@
 
 @media (max-width: 600px) {
     #grid {
+        display: grid;
         grid-template-columns: 1fr; /* Switch to one column on small screens */
         gap: 10vw;
+        padding: 3vw;
+        justify-content: center;
     }
 }
 
