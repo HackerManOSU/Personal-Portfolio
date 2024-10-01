@@ -1,21 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import '../../App.css';
+import ArrowDown from '../Icons/ArrowDown';
+import LinkedIn from '../Icons/LinkedIn';
+import GitHub from '../Icons/GitHub';
+import Instagram from '../Icons/Instagram';
+import './Space.css'
+import '../../index.css'
 
 const Starfield: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const [showTypewriter, setShowTypewriter] = useState(false); // Define the state for showTypewriter
-    const [showIcons, setShowIcons] = useState(false); // Define the state for showing icons
-
-
+    const [showTypewriter, setShowTypewriter] = useState(false);
+    const [showIcons, setShowIcons] = useState(false);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-        const c = canvas.getContext('2d');
-        if (!c) return;
+        const c = canvas.getContext('2d')!; // Use non-null assertion operator here
 
         let w = canvas.offsetWidth;
         let h = canvas.offsetHeight;
@@ -26,19 +26,21 @@ const Starfield: React.FC = () => {
         const maxStars = 2500;
         const stars: Star[] = [];
         let speed = 10;
-        let driftSpeed = 0.02; // Initial drift speed, very slow
+        let driftSpeed = 0.02 // init drift speed
         let drifting = false;
 
         class Star {
-            x: number;
-            y: number;
-            z: number;
-            pz: number;
-            opacity: number;
+            c: CanvasRenderingContext2D;
+            x!: number;
+            y!: number;
+            z!: number;
+            pz!: number;
+            opacity!: number;
             driftX: number;
             driftY: number;
 
-            constructor() {
+            constructor(c: CanvasRenderingContext2D) {
+                this.c = c;
                 this.reset();
                 this.driftX = (Math.random() - 0.5) * driftSpeed;
                 this.driftY = (Math.random() - 0.5) * driftSpeed;
@@ -72,19 +74,19 @@ const Starfield: React.FC = () => {
             }
 
             show() {
-                c.beginPath();
-                c.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                this.c.beginPath();
+                this.c.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
                 const sx = (this.x - w / 2) * (w / this.z);
                 const sy = (this.y - h / 2) * (w / this.z);
                 const r = 1.5;
 
-                c.arc(sx + w / 2, sy + h / 2, r, 0, 2 * Math.PI);
-                c.fill();
+                this.c.arc(sx + w / 2, sy + h / 2, r, 0, 2 * Math.PI);
+                this.c.fill();
             }
         }
 
         for (let i = 0; i < maxStars; i++) {
-            stars.push(new Star());
+            stars.push(new Star(c));
         }
 
         function animate() {
@@ -109,7 +111,7 @@ const Starfield: React.FC = () => {
         };
         let slowDownInterval = setInterval(slowDown, 3);
 
-        window.addEventListener('resize', () => {
+        const handleResize = () => {
             w = canvas.offsetWidth;
             h = canvas.offsetHeight;
             canvas.width = w;
@@ -122,33 +124,63 @@ const Starfield: React.FC = () => {
             });
             prevW = w;
             prevH = h;
-        });
+        };
+
+        window.addEventListener('resize', handleResize);
 
         return () => {
             clearInterval(slowDownInterval);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
+        const typewriterTimeout = setTimeout(() => {
             setShowTypewriter(true);
-        }, 5000); // Delay the typewriter effect by 3 seconds
+        }, 5000);
+
+        return () => clearTimeout(typewriterTimeout);
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
+        const titleTextTimeout = setTimeout(() => {
             document.querySelector('.title-text')?.classList.add('scale-100');
-        }, 1000); // Adjust the delay as needed
+        }, 1000);
+
+        return () => clearTimeout(titleTextTimeout);
     }, []);
 
     useEffect(() => {
-        setTimeout(() => {
+        const iconsTimeout = setTimeout(() => {
             setShowIcons(true);
-            document.querySelectorAll('.icon').forEach(icon => {
+            document.querySelectorAll('.custom-icon').forEach(icon => {
                 icon.classList.add('scale-100');
             });
-        }, 1000); // Adjust the delay as needed
+        }, 1000);
+
+        return () => clearTimeout(iconsTimeout);
     }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            const linksElement = document.querySelector('.links');
+            if (linksElement) {
+                linksElement.classList.add('links-visible');
+            }
+        }, 1000); // Wait for 1 second before making the text visible
+
+    }, []);
+
+    useEffect(() => {
+        setTimeout(() => {
+            const linksElement = document.querySelector('.arrow-down-box');
+            if (linksElement) {
+                linksElement.classList.add('arrow-down-box-visible');
+            }
+        }, 1000); // Wait for 1 second before making the text visible
+
+    }, []);
+
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
@@ -169,16 +201,38 @@ const Starfield: React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex items-center h-[10%] justify-around absolute text-white bottom-[30%] left-1/2 transform -translate-x-1/2 flex space-x-4 w-[80%]">
-            <a href="https://www.linkedin.com/in/zane-garvey" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faLinkedin} className="text-[5vmin] icon transform scale-0 transition-transform duration-[1000ms]" />
-                </a>
-                <a href="https://github.com/HackerManOSU" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faGithub} className="text-[5vmin] icon transform scale-0 transition-transform duration-[1000ms]" />
-                </a>
-                <a href="https://www.instagram.com/zanegarvey" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faInstagram} className="text-[5vmin] icon transform scale-0 transition-transform duration-[1000ms]" />
-                </a>
+            <div className="links absolute top-1/2 left-1/2 z-2 flex flex-row justify-evenly items-center text-white text-center w-[80%]">
+
+                    <a
+                        href="https://www.linkedin.com/in/zane-garvey"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <LinkedIn />
+                    </a>
+
+                    <a
+                        href="https://github.com/HackerManOSU"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        < GitHub />
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/zanegarvey"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        < Instagram />
+                    </a>
+
+            </div>
+
+            <div className="arrow-down-box absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-[3rem]">
+
+            <ArrowDown />
+
             </div>
         </div>
     );

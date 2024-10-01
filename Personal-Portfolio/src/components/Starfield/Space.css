@@ -1,0 +1,21 @@
+.links {
+    transform: translate(-50%, 100%) scale(0);
+    transition: transform 3.5s ease-in-out;
+}
+
+.links-visible {
+    transform: translate(-50%, 200%) scale(1); /* Scale to 1 when visible */
+}
+
+.arrow-down-box {
+    position: absolute;
+    left: 50%;
+    bottom: -100px;
+    scale: 0;
+    transition: bottom 5s ease-in-out, scale 5s ease-in-out;
+}
+
+.arrow-down-box-visible {
+    bottom: 50px;
+    scale: 1;
+}

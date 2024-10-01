@@ -1,0 +1,27 @@
+.custom-icon {
+    transition: transform 0.5s ease-in-out;
+}
+  
+.custom-icon:hover {
+    cursor: url(../../assets/hand-cursor.png), pointer; 
+    filter: url(#glow);
+    transform: scale(1.5);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        top: 0;
+    }
+    40% {
+        top: -20px;
+    }
+    60% {
+        top: -10px;
+    }
+}
+
+.bounce:not(:hover) {
+    animation: bounce 2s infinite;
+    transform-origin: center;
+    position: relative;
+}
