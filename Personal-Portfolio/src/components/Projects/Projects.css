@@ -1,0 +1,13 @@
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    cursor: url(../../assets/hand-cursor.png), pointer;
+}
+
+.project-image {
+    transition: filter 0.3s ease, transform 0.3s ease;
+}

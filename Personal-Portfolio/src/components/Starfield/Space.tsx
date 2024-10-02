@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Typewriter } from 'react-simple-typewriter';
+import { TypeAnimation } from 'react-type-animation';
 import ArrowDown from '../Icons/ArrowDown';
 import LinkedIn from '../Icons/LinkedIn';
 import GitHub from '../Icons/GitHub';
@@ -137,7 +137,7 @@ const Starfield: React.FC = () => {
     useEffect(() => {
         const typewriterTimeout = setTimeout(() => {
             setShowTypewriter(true);
-        }, 5000);
+        }, 7000);
 
         return () => clearTimeout(typewriterTimeout);
     }, []);
@@ -167,7 +167,7 @@ const Starfield: React.FC = () => {
             if (linksElement) {
                 linksElement.classList.add('links-visible');
             }
-        }, 1000); // Wait for 1 second before making the text visible
+        }, 1000);
 
     }, []);
 
@@ -177,7 +177,7 @@ const Starfield: React.FC = () => {
             if (linksElement) {
                 linksElement.classList.add('arrow-down-box-visible');
             }
-        }, 1000); // Wait for 1 second before making the text visible
+        }, 1000);
 
     }, []);
 
@@ -187,15 +187,29 @@ const Starfield: React.FC = () => {
             <canvas ref={canvasRef} id="space" className="w-full h-full" />
             <div className="flex items-center flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-[98%] text-opacity-100 transition-opacity duration-2000 text-[5vmin] font-bold">
                 <div className="flex flex-col md:flex-row items-center justify-center title-text transform scale-0 transition-transform duration-[5000ms]">
-                    <h1 className="text-white">Hey, I'm Zane Garvey!&nbsp;&nbsp;</h1>
+                    <h1 className="text-white">Hellur, I'm Zane Garvey!&nbsp;&nbsp;</h1>
                     {showTypewriter && (
-                        <Typewriter
-                            words={[' Musician 🎸 + 🎹', ' Plant Dad 🌱', ' Coder 🖥️', ' Fisherman 🎣', ' MMA Enthusiast 🥊', ' Cloud Architect ☁️', ' Dirtbiker 🏍️']}
-                            loop={false}
-                            cursor
-                            typeSpeed={70}
-                            deleteSpeed={50}
-                            delaySpeed={1000}
+                        <TypeAnimation
+                            sequence={[
+                                'Musician 🎸 + 🎹',
+                                2000,
+                                'Plant Dad 🌱',
+                                2000,
+                                'Coder 🖥️',
+                                2000,
+                                'Fisherman 🎣',
+                                2000,
+                                'MMA Enthusiast 🥊',
+                                2000,
+                                'Cloud Architect ☁️',
+                                2000,
+                                'Dirtbiker 🏍️',
+                                2000,
+                            ]}
+                            wrapper="span"
+                            cursor={true}
+                            repeat={Infinity}
+                            style={{ display: 'inline-block' }}
                         />
                     )}
                 </div>
@@ -231,7 +245,9 @@ const Starfield: React.FC = () => {
 
             <div className="arrow-down-box absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-[3rem]">
 
-            <ArrowDown />
+                <a href="#projects">
+                    <ArrowDown />
+                 </a>
 
             </div>
         </div>
