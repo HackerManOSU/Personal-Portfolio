@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css'
+import HoverIcon from './loading-icon.svg';
+
+
 
 interface Project {
     title: string;
@@ -21,27 +24,39 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => {
 
     return (
         <div className="project-card rounded shadow-lg max-w-[4000px]" onClick={handleClick}>
-            <h2 className="text-xl font-bold text-center text-white">{project.title}</h2>
-    
-            <div className="image-container relative group">
-                <div className="border-4 border-white rounded-xl overflow-hidden">
-                    <img
-                        src={project.image}
-                        alt={project.name}
-                        className="project-image w-full h-64 object-cover group-hover:filter group-hover:blur-sm"
-                    />
-                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50"></div>
 
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20">
-                        <img src="./loading-icon.svg" alt="Loading" className="w-12 h-12" />
-                    </div>
+          <h2 className="text-3xl pb-2 font-bold text-center text-white">{project.title}</h2>
+      
+          <div className="image-container relative group">
 
+            <div className="border-4 border-white rounded-xl overflow-hidden">
+            
+              <div className="relative">
+            
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="project-image w-full h-64 object-cover group-hover:filter group-hover:blur-sm"
+                />
+            
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50"></div>
+      
+            
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20">
+            
+                  <img src={HoverIcon} alt="Loading" className="w-32 h-32" />
+            
                 </div>
+            
+              </div>
+            
             </div>
-    
-            <p className="text-xs text-center pt-2 text-white">{project.link}</p>
+          
+          </div>
+      
+          <p className="text-xs text-center pt-2 text-white">{project.link}</p>
         </div>
-    );
+      );
     
 };
 
@@ -56,7 +71,7 @@ const Projects: React.FC = () => {
     }, []);
 
     return (
-        <div id="projects" className="h-[100vh] bg-black font-bold mx-4 border-t-4 border-[white]">
+        <div id="projects" className="h-auto bg-black font-bold mx-4 border-t-4 border-[white]">
             <div>
                 <h1 className="text-white text-center text-6xl pt-12 pb-8">My Projects!</h1>
             </div>
