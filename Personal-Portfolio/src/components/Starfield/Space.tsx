@@ -10,7 +10,6 @@ import '../../index.css'
 const Starfield: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [showTypewriter, setShowTypewriter] = useState(false);
-    const [showIcons, setShowIcons] = useState(false);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -152,7 +151,6 @@ const Starfield: React.FC = () => {
 
     useEffect(() => {
         const iconsTimeout = setTimeout(() => {
-            setShowIcons(true);
             document.querySelectorAll('.custom-icon').forEach(icon => {
                 icon.classList.add('scale-100');
             });

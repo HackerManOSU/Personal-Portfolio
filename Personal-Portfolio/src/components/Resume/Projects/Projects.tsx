@@ -13,10 +13,8 @@ interface Project {
 }
 
 const ProjectItem: React.FC<{ project: Project }> = ({ project }) => {
-    const [loading, setLoading] = useState(false);
 
     const handleClick = () => {
-        setLoading(true);
         setTimeout(() => {
             window.location.href = project.link;
         }, 1000); // simulate delay
