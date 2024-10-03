@@ -63,23 +63,33 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => {
 const Projects: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
 
+    const projectsUrl = import.meta.env.VITE_S3_PROJECTS;
+
     useEffect(() => {
-        fetch('https://personalportfolioprojects.s3.amazonaws.com/projects.json')
+        fetch(projectsUrl)
             .then(response => response.json())
             .then(data => setProjects(data))
             .catch(error => console.error('Error fetching projects:', error));
     }, []);
 
     return (
-        <div id="projects" className="h-auto bg-black font-bold mx-4 border-t-4 border-[white]">
+        <div id="projects" className="h-auto bg-black font-bold border-t-4 border-[white] flex flex-col items-center">
+
+          <div className='max-w-[1400px] w-[100%] mx-4 flex flex-col items-center justify-center'>
+
             <div>
-                <h1 className="text-white text-center text-6xl pt-12 pb-8">My Projects!</h1>
+              <h1 className="text-white text-center text-6xl pt-12 pb-8">My Projects!</h1>
             </div>
             <div className="project-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 place-items-center">
                 {projects.map((project, index) => (
                     <ProjectItem key={index} project={project} />
                 ))}
             </div>
+
+
+
+          </div>
+
         </div>
     );
 };
