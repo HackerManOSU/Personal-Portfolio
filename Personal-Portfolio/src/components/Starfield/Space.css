@@ -7,6 +7,10 @@
     transform: translate(-50%, 200%) scale(1); /* Scale to 1 when visible */
 }
 
+.links a:hover {
+    cursor: url('../../assets/hand-cursor.png'), default;
+}
+
 .arrow-down-box {
     position: absolute;
     left: 50%;
@@ -20,3 +24,9 @@
     bottom: 50px;
     scale: 1;
 }
+
+.arrow-down-box:hover {
+    cursor: url('/src/assets/hand-cursor.png'), pointer;
+}
+
+

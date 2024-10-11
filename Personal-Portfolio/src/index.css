@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define the keyframes for the glow animation */
 @keyframes glow {
   0% {
     text-shadow:
@@ -20,7 +19,17 @@
   }
 }
 
-/* Create a custom class for the glow animation on hover */
 .hover\\:animate-glow:hover {
   animation: glow 1s ease-in-out;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: black;
 }

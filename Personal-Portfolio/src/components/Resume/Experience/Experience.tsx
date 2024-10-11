@@ -1,18 +1,54 @@
 import React from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import BeaverLogo from './BeaversLogo.png'
 import IRCOLogo from './IRCOLogo.png'
 import WebDevLogo from './WebDevLogo.png'
 
 const Experience: React.FC = () => {
+
+    const controls = useAnimation();
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        threshold: 0.3,
+    });
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { staggerChildren: 0.3 },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+    };
+
+    React.useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
+    }, [controls, inView]);
+
+
     return (
         <div id="experience" className="mx-4 flex flex-col items-center">
             <div>
-                <h1 className="text-white text-center text-6xl pt-12 pb-8 font-bold">Experience</h1>
+                <h1 className="text-white text-center text-5xl md:text-6xl pt-12 pb-8 font-bold">Experience</h1>
             </div>
 
-            <div className='text-white mx-16 w-[80%] max-w-[1200px]'>
+            <motion.div
+                ref={ref}
+                variants={containerVariants}
+                initial="hidden"
+                animate={controls}
+                className='text-white mx-16 w-[80%] max-w-[1200px]'
+            >
 
-                <div className='OSUIT'>
+            <motion.div variants={itemVariants} className='OSUIT'>
 
                     <div className='text-center lg:flex lg:text-left lg:items-center lg:justify-between text-xl'>
 
@@ -41,9 +77,10 @@ const Experience: React.FC = () => {
 
                     </div>
 
-                </div>
+            </motion.div>
 
-                <div className='Freelance mt-12'>
+            <motion.div variants={itemVariants} className='Freelance mt-12'>
+
 
                     <div className='text-center lg:flex lg:text-left lg:items-center lg:justify-between text-xl'>
 
@@ -71,9 +108,9 @@ const Experience: React.FC = () => {
 
                     </div>
 
-                </div>
+            </motion.div>
 
-                <div className='IRCO mt-12'>
+            <motion.div variants={itemVariants} className='IRCO mt-12'>
 
                     <div className='text-center lg:flex lg:text-left lg:items-center lg:justify-between text-xl'>
 
@@ -101,33 +138,32 @@ const Experience: React.FC = () => {
 
                     </div>
 
-                </div>
         
-            </div>
+            </motion.div>
 
-            <div className='w-[80%] max-w-[1000px] mt-8 flex items-center justify-evenly'>
+                <motion.div variants={itemVariants} className='w-[100%] max-w-[1000px] mt-8 flex items-center justify-evenly mx-auto'>
 
-                <div className='w-[20%] min-w-[100px]'>
+                    <div className='w-[20%] min-w-[100px]'>
 
-                    <img src={BeaverLogo} alt="" />
+                        <img src={BeaverLogo} alt="" />
 
-                </div>
+                    </div>
 
-                <div className='w-[20%] min-w-[100px]'>
+                    <div className='w-[20%] min-w-[100px]'>
 
-                    <img src={IRCOLogo} alt="" />
+                        <img src={IRCOLogo} alt="" />
 
-                </div>
+                    </div>
 
-                <div className='w-[15%] min-w-[80px]'>
+                    <div className='w-[15%] min-w-[80px]'>
 
-                    <img src={WebDevLogo} alt="" />
+                        <img src={WebDevLogo} alt="" />
 
-                </div>
+                    </div>
 
-                
+                </motion.div>
 
-            </div>
+            </motion.div>
 
         </div>
     );

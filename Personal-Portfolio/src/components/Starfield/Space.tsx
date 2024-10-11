@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import ArrowDown from '../Icons/ArrowDown';
-import LinkedIn from '../Icons/LinkedIn';
-import GitHub from '../Icons/GitHub';
-import Instagram from '../Icons/Instagram';
+import ArrowDown from './Icons/ArrowDown';
+import LinkedIn from './Icons/LinkedIn';
+import GitHub from './Icons/GitHub';
+import Instagram from './Icons/Instagram';
 import './Space.css'
 import '../../index.css'
 
@@ -243,7 +243,7 @@ const Starfield: React.FC = () => {
 
             <div className="arrow-down-box absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-[3rem]">
 
-                <a href="#projects">
+                <a href="#projects" className='arrow'>
                     <ArrowDown />
                  </a>
 

@@ -1,9 +1,37 @@
 import React from 'react'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import GoogleCyberBadge from './GoogleCyberSecBadge.webp'
 import AWSCCP from './AWSCCP.png'
 import AWSSAA from './AWSSAA.png'
 
 const Certifications: React.FC = () => {
+
+    const controls = useAnimation();
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        threshold: 0.3,
+    });
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { staggerChildren: 0.3 },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+    };
+
+    React.useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
+    }, [controls, inView]);
 
     return (
 
@@ -11,11 +39,19 @@ const Certifications: React.FC = () => {
 
             <div className=''>
 
-                <h1 className='text-center text-6xl pt-12 pb-8 font-bold'>Certifications</h1>
+                <h1 className='text-center text-5xl pt-12 pb-8 font-bold md:text-6xl'>Certifications</h1>
 
             </div>
 
-            <div className='flex flex-col text-center text-2xl max-w-[90%]'>
+            <motion.div
+                ref={ref}
+                variants={containerVariants}
+                initial="hidden"
+                animate={controls}
+                className='text-white max-w-[1200px]'
+            >
+
+            <motion.div variants={itemVariants} className='flex flex-col text-center text-2xl max-w-[80%] mx-auto'>
 
                 <h2>
                     Google Cybersecurity Professional
@@ -33,29 +69,31 @@ const Certifications: React.FC = () => {
 
                 </h2>
 
-            </div>
+            </motion.div>
 
-            <div className='flex flex-row justify-between items-center w-[80%] max-w-[1000px] mt-8'>
+            <motion.div variants={itemVariants} className='flex flex-row justify-between items-center w-[80%] max-w-[1000px] mt-8 mx-auto'>
 
-                <div className='w-[20%] min-w-[100px]'>
+                <div className='w-[20%] min-w-[80px]'>
 
                     <img src={GoogleCyberBadge} alt="" />
 
                 </div>
 
-                <div className='w-[20%] min-w-[100px]'>
+                <div className='w-[20%] min-w-[80px]'>
 
                     <img src={AWSCCP} alt="" />
 
                 </div>
 
-                <div className='w-[20%] min-w-[100px]'>
+                <div className='w-[20%] min-w-[80px]'>
 
                     <img src={AWSSAA} alt="" />
 
                 </div>
 
-            </div>
+            </motion.div>
+
+            </motion.div>
 
 
 

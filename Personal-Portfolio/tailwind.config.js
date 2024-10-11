@@ -9,26 +9,25 @@ export default {
     extend: {
       animation: {
         wobble: 'wobble 10s ease-in-out infinite alternate',
-        // glow: 'glow 2s ease-in-out infinite alternate',
+        fadeInUp: 'fadeInUp 0.5s ease-out forwards',
       },
       keyframes: {
         wobble: {
           '33%': { transform: 'rotate(3deg)' },
           '66%': { transform: 'rotate(-3deg)' },
         },
-        /*glow: {
+        fadeInUp: {
           '0%': {
-            textShadow:
-              '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff',
+            opacity: '0',
+            transform: 'translateY(20px)',
           },
           '100%': {
-            textShadow:
-              '0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff',
+            opacity: '1',
+            transform: 'translateY(0)',
           },
-        }, */
+        },
       },
     },
   },
   plugins: [],
 }
-
