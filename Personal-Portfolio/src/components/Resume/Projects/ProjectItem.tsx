@@ -28,7 +28,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   return (
     <motion.div
-      className="project-card rounded cursor-pointer"
+      className="project-card w-[80%] md-[100%] rounded cursor-pointer"
       onClick={handleClick}
       variants={itemVariants}
     >
