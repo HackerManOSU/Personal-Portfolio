@@ -1,32 +1,10 @@
-.links {
-    transform: translate(-50%, 100%) scale(0);
-    transition: transform 5s ease-in-out;
+.motion-div {
+    z-index: 10;
+    position: relative;
+  
 }
 
-.links-visible {
-    transform: translate(-50%, 200%) scale(1); /* Scale to 1 when visible */
+.link-box a:hover,
+.arrow-box a:hover {
+    cursor: url(./hand-cursor.png), pointer;
 }
-
-.links a:hover {
-    cursor: url('../../assets/hand-cursor.png'), default;
-}
-
-.arrow-down-box {
-    position: absolute;
-    left: 50%;
-    bottom: -100px;
-    scale: 0;
-    transition: bottom 5s ease-in-out, scale 5s ease-in-out;
-    transform-origin: center;
-}
-
-.arrow-down-box-visible {
-    bottom: 50px;
-    scale: 1;
-}
-
-.arrow-down-box:hover {
-    cursor: url('/src/assets/hand-cursor.png'), pointer;
-}
-
-

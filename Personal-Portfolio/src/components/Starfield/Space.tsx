@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import ArrowDown from './Icons/ArrowDown';
 import LinkedIn from './Icons/LinkedIn';
@@ -10,6 +11,8 @@ import '../../index.css'
 const Starfield: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [showTypewriter, setShowTypewriter] = useState(false);
+    const controls = useAnimation(); // Make sure controls is initialized here
+
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -142,113 +145,137 @@ const Starfield: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        const titleTextTimeout = setTimeout(() => {
-            document.querySelector('.title-text')?.classList.add('scale-100');
-        }, 1000);
+        controls.start('visible'); // Trigger animation immediately on load
+    }, [controls]);
 
-        return () => clearTimeout(titleTextTimeout);
-    }, []);
+    const containerVariants = {
+        hidden: {y: 0, scale: 0.01 },
+        visible: {
+            y: 0,
+            scale: 1,
+            transition: { duration: 5 }
+        },
+    };
+    
+    const titleVariants = {
+        hidden: { y: 60, scale: 0.01 },
+        visible: { 
+            y: 0, 
+            scale: 1,
+            transition: { duration: 5 }
+        },
+    };
 
-    useEffect(() => {
-        const iconsTimeout = setTimeout(() => {
-            document.querySelectorAll('.custom-icon').forEach(icon => {
-                icon.classList.add('scale-100');
-            });
-        }, 1000);
+    const linkVariants = {
+        hidden: { y: -60, scale: 0 },
+        visible: { 
+            y: 0, 
+            scale: 1,
+            transition: { duration: 5 }
+        },
+    };
 
-        return () => clearTimeout(iconsTimeout);
-    }, []);
-
-    useEffect(() => {
-        setTimeout(() => {
-            const linksElement = document.querySelector('.links');
-            if (linksElement) {
-                linksElement.classList.add('links-visible');
-            }
-        }, 1000);
-
-    }, []);
-
-    useEffect(() => {
-        setTimeout(() => {
-            const linksElement = document.querySelector('.arrow-down-box');
-            if (linksElement) {
-                linksElement.classList.add('arrow-down-box-visible');
-            }
-        }, 1000);
-
-    }, []);
-
+    const arrowVariants = {
+        hidden: { y: 200, scale: 0 },
+        visible: { 
+            y: 0, 
+            scale: 1,
+            transition: { duration: 5 }
+        },
+    };
 
     return (
-        <div className="relative w-full h-screen overflow-hidden">
-            <canvas ref={canvasRef} id="space" className="w-full h-full" />
-            <div className="flex items-center flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white w-[98%] text-opacity-100 transition-opacity duration-2000 text-[5vmin] font-bold">
-                <div className="flex flex-col md:flex-row items-center justify-center title-text transform scale-0 transition-transform duration-[5000ms]">
-                    <h1 className="text-white">Hellur, I'm Zane Garvey!&nbsp;&nbsp;</h1>
-                    {showTypewriter && (
-                        <TypeAnimation
-                            sequence={[
-                                'Musician 🎸 + 🎹',
-                                2000,
-                                'Plant Dad 🌱',
-                                2000,
-                                'Coder 🖥️',
-                                2000,
-                                'Fisherman 🎣',
-                                2000,
-                                'MMA Enthusiast 🥊',
-                                2000,
-                                'Cloud Architect ☁️',
-                                2000,
-                                'Dirtbiker 🏍️',
-                                2000,
-                            ]}
-                            wrapper="span"
-                            cursor={true}
-                            repeat={Infinity}
-                            style={{ display: 'inline-block' }}
-                        />
-                    )}
+        <div className="relative w-full h-screen overflow-hidden text-white">
+            <canvas
+                ref={canvasRef}
+                id="space"
+                className="absolute inset-0 w-full h-full z-0"
+            />
+
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate={controls}
+                className="absolute inset-0 w-full h-full z-10"
+            >
+
+                <div className="relative h-screen flex flex-col items-center">
+
+                    <motion.div
+                        className="absolute bottom-[55%] w-[100%] flex items-center justify-center"
+                        variants={titleVariants}
+                    >
+                        <div className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center text-[5vmin] font-bold text-center w-[95%]">
+                            <h1 className="pr-4">Hellur, I'm Zane Garvey!</h1>
+                            {showTypewriter && (
+                                <TypeAnimation
+                                    sequence={[
+                                        'Musician 🎸 + 🎹',
+                                        2000,
+                                        'Plant Dad 🌱',
+                                        2000,
+                                        'Coder 🖥️',
+                                        2000,
+                                        'Fisherman 🎣',
+                                        2000,
+                                        'MMA Enthusiast 🥊',
+                                        2000,
+                                        'Cloud Architect ☁️',
+                                        2000,
+                                        'Dirtbiker 🏍️',
+                                        2000,
+                                    ]}
+                                    wrapper="span"
+                                    cursor={true}
+                                    repeat={Infinity}
+                                    style={{ display: 'inline-block' }}
+                                />
+                            )}
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        className="link-box absolute bottom-[45%] flex flex-row justify-evenly items-center w-[80%] text-[4vmin]"
+                        variants={linkVariants}
+                    >
+                        <a
+                            href="https://www.linkedin.com/in/zane-garvey"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <LinkedIn />
+                        </a>
+
+                        <a
+                            href="https://github.com/HackerManOSU"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <GitHub />
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/zanegarvey"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Instagram />
+                        </a>
+                        
+                    </motion.div>
+
+                    <motion.div
+                        className="absolute bottom-4 arrow-box"
+                        variants={arrowVariants}
+                    >
+                        <a href="#me" className='arrow'>
+                            <ArrowDown />
+                        </a>
+                    </motion.div>
                 </div>
-            </div>
 
-            <div className="links absolute top-1/2 left-1/2 z-2 flex flex-row justify-evenly items-center text-white text-center w-[80%]">
-
-                    <a
-                        href="https://www.linkedin.com/in/zane-garvey"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <LinkedIn />
-                    </a>
-
-                    <a
-                        href="https://github.com/HackerManOSU"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        < GitHub />
-                    </a>
-
-                    <a
-                        href="https://www.instagram.com/zanegarvey"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        < Instagram />
-                    </a>
-
-            </div>
-
-            <div className="arrow-down-box absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-[3rem]">
-
-                <a href="#projects" className='arrow'>
-                    <ArrowDown />
-                 </a>
-
-            </div>
-        </div>
+            </motion.div>
+    </div>
     );
 };
 
