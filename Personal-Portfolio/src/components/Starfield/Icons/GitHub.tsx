@@ -8,7 +8,7 @@ const GitHub: React.FC = () => {
       width="56"
       height="56"
       viewBox="0 0 512 512"
-      className="custom-icon"
+      className="custom-icon h-12"
     >
       {/* Define the glow filter */}
       <defs>

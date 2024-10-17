@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
 
                     <div className='text-center lg:flex lg:text-left lg:items-center lg:justify-between text-xl'>
 
-                        <h2><strong>University IT Support and Technician</strong> - Oregon State University UIT</h2>
+                        <h2><strong>Information Technology Consultant</strong> - Oregon State University UIT</h2>
 
                         <h2 className='text-[gray] lg:text-right'>02/2024 - Present</h2>
 
