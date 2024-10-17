@@ -3,7 +3,7 @@
 }
   
 .custom-icon:hover {
-    cursor: url(../../assets/hand-cursor.png), pointer; 
+    cursor: url(../../../assets/hand-cursor.png), pointer;
     filter: url(#glow);
     transform: scale(1.5);
 }

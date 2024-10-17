@@ -6,7 +6,7 @@
 
 .image-container {
     position: relative;
-    cursor: url('../../../assets/hand-cursor.png'), pointer;
+    cursor: url(../../../assets/hand-cursor.png), pointer;
 }
 
 .project-image {
