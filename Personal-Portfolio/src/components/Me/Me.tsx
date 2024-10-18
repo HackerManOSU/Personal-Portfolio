@@ -133,9 +133,11 @@ const Me: React.FC = () => {
               <img className='img-me' src="/Images/Guitar.jpeg" alt="" />
               <img className='img-me' src="/Images/Piano.jpeg" alt="" />
               <img className='img-me' src="/Images/Dirtbike1.jpeg" alt="" />
+              <img className='img-me' src="/Images/Guitar2.jpeg" alt="" />
               <img className='img-me' src="/Images/Gun.jpeg" alt="" />
               <img className='img-me' src="/Images/Ninja.jpeg" alt="" />
               <img className='img-me' src="/Images/Fish4.jpeg" alt="" />
+              <img className='img-me' src="/Images/Guitar3.jpeg" alt="" />
               <img className='img-me' src="/Images/Mechanic1.jpeg" alt="" />
 
 
