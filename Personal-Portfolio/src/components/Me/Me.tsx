@@ -44,13 +44,31 @@ const Me: React.FC = () => {
 
   return (
     <div id='me' className='border-t-4 border-white text-white pt-12 pb-8 flex flex-col items-center'>
-      <h1 className='text-6xl font-bold'>Me!</h1>
+      <h1 className='text-6xl font-bold'>About Me!</h1>
 
-      <div className='py-8 text-center mx-12'>
+      <div className='py-8 mx-12 grid place-items-center grid-cols-1 lg:grid-cols-2'>
 
-        <p>I study <strong>Computer Science</strong> at <strong>Oregon State University</strong> with a focus in Human-Computer-Interaction and Cybersecurtity</p>
+        <div className='h-full flex flex-col items-stretch items-center justify-center'>
 
-      </div>
+          <img src="/Images/Snow.jpeg" alt="" className='img-main w-full h-auto max-w-[400px] max-h-[700px]' />
+
+        </div>
+
+        <div className='h-full flex items-stretch max-w-[600px] bg-blue-500'>
+
+          <div className='flex flex-col p-12'>
+
+            <h2 className='text-center text-3xl pb-12 md:pb-0'><strong>Hi! I'm Zane Garvey. Here's a little about me...</strong></h2>
+            <p><strong>College: </strong>Oregon State University <br /> <br /></p>
+            <p><strong>Major: </strong>Computer Science focusing in Human-Computer Interaction and Cybersecurity <br /><br /></p>
+            <p><strong>Interests in Tech: </strong>Just like outside of tech, I have a a wide range of interests within the tech field. I am interested in everything from Web dev, to systems programming, to cyberscurity, to cloud development/architecture <br /><br /></p>
+            <p><strong>Hobbies: </strong>I believe hobbies are invaluable for finding common ground, and by extension, creating strong connections with people (especially coworkers). Luckily, I am a serial hobbyist! I obviously love coding, but outside of the obvious, I love: piano and guitar, training BJJ & MMA,  researching and wearing watches, dirtbiking, fishing, space, and most of all, just learning!</p>
+          
+          </div>
+
+        </div>
+
+        </div>
 
       <motion.div
                 ref={ref}
@@ -126,12 +144,12 @@ const Me: React.FC = () => {
 
           <div className='flex flex-col items-center justify-center'>
 
-            <motion.div variants={titleVariants}>My Hobbies</motion.div>
+            <motion.div variants={titleVariants} className='text-5xl font-bold'>My Hobbies</motion.div>
 
             <motion.div variants={photoVariants} className='w-[100%] grid grid-cols-1 md:grid-cols-3 gap-4 p-4 place-items-center' >
 
-              <img className='img-me' src="/Images/Guitar.jpeg" alt="" />
               <img className='img-me' src="/Images/Piano.jpeg" alt="" />
+              <img className='img-me' src="/Images/Guitar.jpeg" alt="" />
               <img className='img-me' src="/Images/Dirtbike1.jpeg" alt="" />
               <img className='img-me' src="/Images/Guitar2.jpeg" alt="" />
               <img className='img-me' src="/Images/Gun.jpeg" alt="" />
@@ -148,8 +166,6 @@ const Me: React.FC = () => {
           <div>
 
           </div>
-
-
 
       </motion.div>
       

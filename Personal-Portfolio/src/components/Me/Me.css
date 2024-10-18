@@ -18,3 +18,8 @@
         height: 300px;
     }
 }
+
+.img-main {
+    border: 3px solid #333;
+    border-radius: 12px;
+}
