@@ -162,7 +162,7 @@ const Starfield: React.FC = () => {
         visible: { 
             y: 0, 
             scale: 1,
-            transition: { duration: 5 }
+            transition: { duration: 5, delay: 1 }
         },
     };
 
@@ -171,7 +171,7 @@ const Starfield: React.FC = () => {
         visible: { 
             y: 0, 
             scale: 1,
-            transition: { duration: 5 }
+            transition: { duration: 5, delay: 1 }
         },
     };
 
@@ -180,7 +180,7 @@ const Starfield: React.FC = () => {
         visible: { 
             y: 0, 
             scale: 1,
-            transition: { duration: 5 }
+            transition: { duration: 5, delay: 3 }
         },
     };
 
@@ -205,7 +205,7 @@ const Starfield: React.FC = () => {
                         className="absolute bottom-[55%] w-[100%] flex items-center justify-center"
                         variants={titleVariants}
                     >
-                        <div className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center text-[5vmin] font-bold text-center w-[95%]">
+                        <div className="main-text flex flex-col lg:flex-row lg:flex-wrap items-center justify-center text-4xl lg:text-6xl font-bold text-center w-[95%]">
                             <h1 className="pr-4">Hellur, I'm Zane Garvey!</h1>
                             {showTypewriter && (
                                 <TypeAnimation

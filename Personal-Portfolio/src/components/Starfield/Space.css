@@ -8,3 +8,7 @@
 .arrow-box a:hover {
     cursor: url(./hand-cursor.png), pointer;
 }
+
+.main-text {
+    user-select: none;
+}
