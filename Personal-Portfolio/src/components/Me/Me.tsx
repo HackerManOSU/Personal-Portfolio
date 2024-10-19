@@ -54,11 +54,11 @@ const Me: React.FC = () => {
 
         </div>
 
-        <div className='h-full flex items-stretch max-w-[600px] bg-blue-500'>
+        <div className='h-full flex items-stretch max-w-[600px]'>
 
           <div className='flex flex-col p-12'>
 
-            <h2 className='text-center text-3xl pb-12 md:pb-0'><strong>Hi! I'm Zane Garvey. Here's a little about me...</strong></h2>
+            <h2 className='text-center text-3xl pb-12 lg:pb-12'><strong>Hi! I'm Zane Garvey. Here's a little about me...</strong></h2>
             <p><strong>College: </strong>Oregon State University <br /> <br /></p>
             <p><strong>Major: </strong>Computer Science focusing in Human-Computer Interaction and Cybersecurity <br /><br /></p>
             <p><strong>Interests in Tech: </strong>Just like outside of tech, I have a a wide range of interests within the tech field. I am interested in everything from Web dev, to systems programming, to cyberscurity, to cloud development/architecture <br /><br /></p>
