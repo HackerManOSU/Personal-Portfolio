@@ -16,7 +16,6 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
   const [sortedProjects, setSortedProjects] = useState<Project[]>([]);
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -40,7 +39,6 @@ const Projects: React.FC = () => {
         const projects = data.Items.map(item => unmarshall(item)) as Project[];
 
         const sortedByPriority = projects.sort((a, b) => a.Priority - b.Priority);
-        setProjects(sortedByPriority);
         setSortedProjects(sortedByPriority);
       }
     } catch (error) {
