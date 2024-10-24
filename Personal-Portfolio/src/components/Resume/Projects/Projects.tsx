@@ -1,41 +1,62 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { DynamoDBClient, ScanCommand } from '@aws-sdk/client-dynamodb';
+import { unmarshall } from '@aws-sdk/util-dynamodb';
 import ProjectItem from './ProjectItem';
 import './Projects.css'
 
 interface Project {
-  id: string;
-    title: string;
-    image: string;
-    name: string;
-    description: string;
-    link: string;
+  ProjectID: string;
+  Title: string;
+  Image: string;
+  Description: string;
+  Url: string;
+  Priority: number;
 }
 
 const Projects: React.FC = () => {
-    const [projects, setProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [sortedProjects, setSortedProjects] = useState<Project[]>([]);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-    const projectsUrl = import.meta.env.VITE_S3_PROJECTS;
+  const fetchProjectsFromDynamoDB = async () => {
+    try {
+      const client = new DynamoDBClient({
+        region: import.meta.env.VITE_AWS_REGION,
+        credentials: {
+          accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID!,
+          secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY!,
+        },
+      });
+      
+      const command = new ScanCommand({
+        TableName: 'PortfolioProjects',
+      });
+  
+      const data = await client.send(command);
+      if (data.Items) {
+        const projects = data.Items.map(item => unmarshall(item)) as Project[];
 
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      triggerOnce: true,
-      threshold: 0.1,
-    });
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible');
+        const sortedByPriority = projects.sort((a, b) => a.Priority - b.Priority);
+        setProjects(sortedByPriority);
+        setSortedProjects(sortedByPriority);
       }
-    }, [controls, inView]);
+    } catch (error) {
+      console.error('Error fetching projects from DynamoDB:', error);
+    }
+  };
 
-    useEffect(() => {
-        fetch(projectsUrl)
-            .then(response => response.json())
-            .then(data => setProjects(data))
-            .catch(error => console.error('Error fetching projects:', error));
-    }, []);
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  useEffect(() => {
+    fetchProjectsFromDynamoDB();
+  }, []);
 
     const containerVariants = {
       hidden: { opacity: 0 },
@@ -64,9 +85,9 @@ const Projects: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-          >
-            {projects.map((project) => (
-              <ProjectItem key={project.id} project={project} />
+            >
+            {sortedProjects.map((project) => (
+              <ProjectItem key={project.ProjectID} project={project} />
             ))}
           </motion.div>
         </AnimatePresence>

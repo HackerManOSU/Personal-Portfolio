@@ -4,12 +4,12 @@ import './Projects.css';
 import HoverIcon from './loading-icon.svg';
 
 interface Project {
-  id: string;
-  title: string;
-  image: string;
-  name: string;
-  description: string;
-  link: string;
+  ProjectID: string;
+  Title: string;
+  Image: string;
+  Description: string;
+  Url: string;
+  Priority: number;
 }
 
 interface ProjectItemProps {
@@ -18,7 +18,7 @@ interface ProjectItemProps {
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
   const handleClick = () => {
-    window.location.href = project.link;
+    window.location.href = project.Url;
   };
 
   const itemVariants = {
@@ -32,14 +32,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       onClick={handleClick}
       variants={itemVariants}
     >
-      <h2 className="text-3xl pb-2 font-bold text-center text-white">{project.title}</h2>
+      <h2 className="text-3xl pb-2 font-bold text-center text-white">{project.Title}</h2>
 
       <div className="image-container relative group">
         <div className="border-2 border-white rounded-xl overflow-hidden">
           <div className="relative">
             <img
-              src={project.image}
-              alt={project.name}
+              src={project.Image}
+              alt={project.Title}
               className="project-image w-full h-auto object-cover group-hover:filter group-hover:blur-sm"
             />
 
@@ -52,7 +52,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
         </div>
       </div>
 
-      <p className="text-xs text-center pt-2 text-white">{project.link}</p>
+      <p className="text-xs text-center pt-2 text-white">{project.Url}</p>
     </motion.div>
   );
 };
