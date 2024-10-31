@@ -13,6 +13,7 @@ This portfolio project showcases my professional journey and projects with an in
 ### Backend
 - [x] **Node.js**
 - [x] **AWS DynamoDB**
+- [x] **AWS S3**
 
 ### Tools and Libraries
 - [x] **ESLint**
