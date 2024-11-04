@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { DynamoDBClient, ScanCommand } from '@aws-sdk/client-dynamodb';
-import { unmarshall } from '@aws-sdk/util-dynamodb';
 import ProjectItem from './ProjectItem';
 import './Projects.css'
 
@@ -20,29 +18,14 @@ const Projects: React.FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const fetchProjectsFromDynamoDB = async () => {
+  const fetchProjectsFromBackend = async () => {
     try {
-      const client = new DynamoDBClient({
-        region: import.meta.env.VITE_AWS_REGION,
-        credentials: {
-          accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID!,
-          secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY!,
-        },
-      });
+      const response = await fetch('https://personal-portfolio-backend-eosin.vercel.app/api/aws');
+      const projects = await response.json();
       
-      const command = new ScanCommand({
-        TableName: 'PortfolioProjects',
-      });
-  
-      const data = await client.send(command);
-      if (data.Items) {
-        const projects = data.Items.map(item => unmarshall(item)) as Project[];
-
-        const sortedByPriority = projects.sort((a, b) => a.Priority - b.Priority);
-        setSortedProjects(sortedByPriority);
-      }
+      setSortedProjects(projects);
     } catch (error) {
-      console.error('Error fetching projects from DynamoDB:', error);
+      console.error('Error fetching projects from backend:', error);
     }
   };
 
@@ -53,24 +36,23 @@ const Projects: React.FC = () => {
   }, [controls, inView]);
 
   useEffect(() => {
-    fetchProjectsFromDynamoDB();
+    fetchProjectsFromBackend();
   }, []);
 
-    const containerVariants = {
-      hidden: { opacity: 0 },
-      visible: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.3,
-        },
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
       },
-    };
-  
+    },
+  };
 
-    return (
-      <div
+  return (
+    <div
       id="projects"
-      className="h-auto  font-bold border-t-4 border-white flex flex-col items-center"
+      className="h-auto font-bold border-t-4 border-white flex flex-col items-center"
     >
       <div className="max-w-[1800px] w-full mx-4 flex flex-col items-center justify-center">
         <div>
@@ -83,7 +65,7 @@ const Projects: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            >
+          >
             {sortedProjects.map((project) => (
               <ProjectItem key={project.ProjectID} project={project} />
             ))}
@@ -91,7 +73,7 @@ const Projects: React.FC = () => {
         </AnimatePresence>
       </div>
     </div>
-    );
+  );
 };
 
 export default Projects;
