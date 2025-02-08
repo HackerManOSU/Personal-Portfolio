@@ -243,7 +243,7 @@ const Starfield: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <LinkedIn />
+                            <LinkedIn className='animate-[wobble_3s_ease-in-out_infinite] delay-[1s]'/>
                         </a>
 
                         <a
@@ -251,7 +251,7 @@ const Starfield: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <GitHub />
+                            <GitHub className='animate-[wobble_3s_ease-in-out_infinite] delay-[1s]'/>
                         </a>
 
                         <a
@@ -259,7 +259,7 @@ const Starfield: React.FC = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Instagram />
+                            <Instagram className='animate-[wobble_3s_ease-in-out_infinite] delay-[1s]'/>
                         </a>
                         
                     </motion.div>
@@ -268,7 +268,7 @@ const Starfield: React.FC = () => {
                         className="absolute bottom-4 arrow-box"
                         variants={arrowVariants}
                     >
-                        <a href="#me" className='arrow'>
+                        <a href="#aboutme" className='arrow'>
                             <ArrowDown />
                         </a>
                     </motion.div>
