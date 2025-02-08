@@ -48,11 +48,45 @@ const Experience: React.FC = () => {
                 className='text-white mx-16 w-[80%] max-w-[1200px]'
             >
 
-            <motion.div variants={itemVariants} className='OSUIT'>
+            <motion.div variants={itemVariants} className='AEng'>
+
+            <div className='text-center lg:flex lg:text-left lg:items-center lg:justify-between text-xl'>
+
+                <h2><strong>Events Audio Engineer</strong> - Oregon State University UIT</h2>
+
+                <h3 className='text-gray-200'>Extension of IT Support job </h3>
+
+                <h2 className='text-[gray] lg:text-right'>10/2024 - Present</h2>
+
+            </div>
+
+            <div className='text-left md:flex md:items-center items-center md:justify-between'>
+
+                <p className='text-center md:pl-8 pt-8 lg:text-left'>
+
+                    <ul>
+
+                        <li>Mixed and produced audio for live events attended by thousands of fans, ensuring high-quality sound for
+                        both in-person audiences and recorded broadcasts</li>
+
+                        <li className='pb-4 pt-4'>Collaborated with marketing teams, directors, and event coordinators to synchronize audio production with
+                        event objectives and promotional activities</li>
+
+                        <li>Troubleshot technical issues in high-pressure environments, minimizing downtime during live events</li>
+
+                    </ul>
+
+                </p>
+
+            </div>
+
+            </motion.div>
+
+            <motion.div variants={itemVariants} className='OSUIT mt-12'>
 
                     <div className='text-center lg:flex lg:text-left lg:items-center lg:justify-between text-xl'>
 
-                        <h2><strong>Information Technology Consultant</strong> - Oregon State University UIT</h2>
+                        <h2><strong>IT Support and Technician</strong> - Oregon State University UIT</h2>
 
                         <h2 className='text-[gray] lg:text-right'>02/2024 - Present</h2>
 
