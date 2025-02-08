@@ -2,7 +2,6 @@ import React from 'react'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import GoogleCyberBadge from './GoogleCyberSecBadge.webp'
-import AWSCCP from './AWSCCP.png'
 import AWSSAA from './AWSSAA.png'
 
 const Certifications: React.FC = () => {
@@ -57,12 +56,6 @@ const Certifications: React.FC = () => {
                     Google Cybersecurity Professional
                 </h2>
 
-                <h2 className='pb-8 pt-8'>
-
-                    Amazon Web Services Certified Cloud Practitioner - AWS CCP
-
-                </h2>
-
                 <h2 className='pb-8'>
 
                     Amazon Web Services Solution Architect Associate - AWS SAA (In Progress)
@@ -76,12 +69,6 @@ const Certifications: React.FC = () => {
                 <div className='w-[20%] min-w-[80px]'>
 
                     <img src={GoogleCyberBadge} alt="" />
-
-                </div>
-
-                <div className='w-[20%] min-w-[80px]'>
-
-                    <img src={AWSCCP} alt="" />
 
                 </div>
 
