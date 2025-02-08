@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutMe: React.FC = () => {
   return (
-    <div className="text-white border-t-4 border-white pt-12 pb-8 flex flex-col items-center">
+    <div id='aboutme' className="text-white border-t-4 border-white pt-12 pb-8 flex flex-col items-center">
       <h1 className='text-6xl font-bold'>About Me!</h1>
 
       <div className='py-8 mx-12 grid place-items-center grid-cols-1 lg:grid-cols-2'>

@@ -4,6 +4,7 @@ import AboutMe from './components/Me/AboutMe'
 import Me from './components/Me/Me'
 import Resume from './components/Resume/Resume'
 import ProgressBar from './components/ProgressBar/ProgressBar'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <AboutMe />
       <Resume />
       <Me />
+      <Footer />
     </div>
     </>
   )
