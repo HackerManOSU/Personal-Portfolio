@@ -14,6 +14,7 @@ import JavaScript from '../../../assets/skills/javascript-js.svg';
 import Splunk from '../../../assets/skills/splunk.svg';
 import Wireshark from '../../../assets/skills/wireshark.svg';
 import Bash from '../../../assets/skills/bash.svg';
+import NextJS from '../../../assets/skills/nextjs.svg'; 
 
 const Skills: React.FC = () => {
 
@@ -67,6 +68,7 @@ const Skills: React.FC = () => {
 
                 <img className='skills-logos' src={AWS} alt="" />
                 <img className='skills-logos' src={ReactLogo} alt="" />
+                <img className='skills-logos' src={NextJS} alt="" />
                 <img className='skills-logos' src={TypeScript} alt="" />
                 <img className='skills-logos' src={JavaScript} alt="" />
                 <img className='skills-logos' src={Python} alt="" />
