@@ -64,7 +64,7 @@ const Certifications: React.FC = () => {
 
             </motion.div>
 
-            <motion.div variants={itemVariants} className='flex flex-row justify-between items-center w-[80%] max-w-[1000px] mt-8 mx-auto'>
+            <motion.div variants={itemVariants} className='flex flex-row justify-evenly items-center w-[80%] max-w-[1000px] mt-8 mx-auto'>
 
                 <div className='w-[20%] min-w-[80px]'>
 
