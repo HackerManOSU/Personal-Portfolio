@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 /* ++++++++++ LOGOS ++++++++++ */
@@ -65,19 +65,6 @@ const experienceData: TimelineItem[] = [
 const Timeline: React.FC = () => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const timelineLineRef = React.useRef<HTMLDivElement>(null);
-  
-  // Track scroll position relative to the viewport
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  // Create a smooth animation for the glow effect
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   const [glowRef, setGlowRef] = React.useState<HTMLDivElement | null>(null);
   
@@ -85,10 +72,8 @@ const Timeline: React.FC = () => {
     const handleScroll = () => {
       if (!containerRef.current || !timelineLineRef.current || !glowRef) return;
 
-      const container = containerRef.current;
       const timeline = timelineLineRef.current;
       
-      const containerRect = container.getBoundingClientRect();
       const timelineRect = timeline.getBoundingClientRect();
       
       // Viewport height
@@ -170,7 +155,7 @@ const Timeline: React.FC = () => {
       {/* Timeline Cards */}
       <div className="relative">
         {experienceData.map((item, index) => {
-          const [ref, inView] = useInView({
+          const [ref] = useInView({
             threshold: 0.2,
             triggerOnce: false
           });
