@@ -6,6 +6,8 @@ import { useInView } from 'react-intersection-observer';
 import BeaverLogo from './BeaversLogo.png';
 import IRCOLogo from './IRCOLogo.png';
 import WebDevLogo from './WebDevLogo.png';
+import CiscoLogo from './CiscoLogo.png';
+
 
 interface TimelineItem {
   title: string;
@@ -17,9 +19,19 @@ interface TimelineItem {
 
 const experienceData: TimelineItem[] = [
   {
+    title: "Cisco Systems",
+    role: "Software Engineer Intern",
+    date: "03/2025 - 09/2025",
+    description: [
+      "Wrote system firmare for Cisco's UCS Blade Servers",
+      "Rewrote a monolithic user management system into a client-server architecture",
+    ],
+    logo: CiscoLogo
+  },
+  {
     title: "Oregon State University UIT",
     role: "Events Audio Engineer",
-    date: "10/2024 - Present",
+    date: "10/2024 - 03/2025",
     description: [
       "Mixed and produced audio for live events attended by thousands of fans",
       "Collaborated with marketing teams and event coordinators",
@@ -30,7 +42,7 @@ const experienceData: TimelineItem[] = [
   {
     title: "Oregon State University UIT",
     role: "IT Support and Technician",
-    date: "2/2024 - Present",
+    date: "2/2024 - 03/2025",
     description: [
       "Offered technical support to instructors/professors",
       "Remotely accessed classroom technology using various tools",

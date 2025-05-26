@@ -60,6 +60,7 @@ const Me: React.FC = () => {
             <motion.div variants={photoVariants} className='w-[100%] grid grid-cols-1 md:grid-cols-3 gap-4 p-4 place-items-center'>
 
 
+              <img className='img-me' src="/Images/Snow2.jpeg" alt="" />
               <img className='img-me' src="/Images/Beach4.jpeg" alt="" />
               <img className='img-me' src="/Images/Dirtbike.jpeg" alt="" />
               <img className='img-me' src="/Images/Lighthouse2.jpeg" alt="" />
@@ -75,21 +76,16 @@ const Me: React.FC = () => {
               <img className='img-me' src="/Images/Flower1.jpeg" alt="" />
               <img className='img-me' src="/Images/Family2.jpeg" alt="" />
               <img className='img-me' src="/Images/Em2.jpeg" alt="" />
-              <img className='img-me' src="/Images/Flower2.jpeg" alt="" />
-              <img className='img-me' src="/Images/Mechanic1.jpeg" alt="" />
               <img className='img-me' src="/Images/Family1.jpeg" alt="" />
               <img className='img-me' src="/Images/Beach5.jpeg" alt="" />
               <img className='img-me' src="/Images/COJO2.jpeg" alt="" />
               <img className='img-me' src="/Images/Em.jpeg" alt="" />
               <img className='img-me' src="/Images/Football.jpeg" alt="" />
               <img className='img-me' src="/Images/Beach3.jpeg" alt="" />
-              <img className='img-me' src="/Images/Cap.jpeg" alt="" />
               <img className='img-me' src="/Images/Alligator.jpeg" alt="" />
               <img className='img-me' src="/Images/Fish1.jpeg" alt="" />
               <img className='img-me' src="/Images/Horse2.jpeg" alt="" />
               <img className='img-me' src="/Images/Progreso.jpeg" alt="" />
-              <img className='img-me' src="/Images/Heisman.jpeg" alt="" />
-              <img className='img-me' src="/Images/Fish3.jpeg" alt="" />
               <img className='img-me' src="/Images/Beach6.jpeg" alt="" />
               <img className='img-me' src="/Images/Waterfall1.jpeg" alt="" />
               <img className='img-me' src="/Images/Childers.jpeg" alt="" />
@@ -101,7 +97,6 @@ const Me: React.FC = () => {
               <img className='img-me' src="/Images/Milo1.jpeg" alt="" />
               <img className='img-me' src="/Images/Fish5.jpeg" alt="" />
               <img className='img-me' src="/Images/Lh.jpeg" alt="" />
-              <img className='img-me' src="/Images/Snow2.jpeg" alt="" />
               <img className='img-me' src="/Images/Beach7.jpeg" alt="" />
               <img className='img-me' src="/Images/Bear.jpeg" alt="" />
               <img className='img-me' src="/Images/Stingray.jpeg" alt="" />
@@ -131,6 +126,7 @@ const Me: React.FC = () => {
               <img className='img-me' src="/Images/Ninja.jpeg" alt="" />
               <img className='img-me' src="/Images/Fish4.jpeg" alt="" />
               <img className='img-me' src="/Images/Guitar3.jpeg" alt="" />
+              <img className='img-me' src="/Images/Fish3.jpeg" alt="" />
               <img className='img-me' src="/Images/Mechanic1.jpeg" alt="" />
 
 
