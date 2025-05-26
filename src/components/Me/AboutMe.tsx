@@ -19,10 +19,11 @@ const AboutMe: React.FC = () => {
             <h2 className='text-center text-3xl pb-12 lg:pb-12'>
               <strong>Hi! I'm Zane Garvey. Here's a little about me...</strong>
             </h2>
-            <p><strong>College: </strong>Oregon State University <br /> <br /></p>
             <p>
-              <strong>Major: </strong>Computer Science focusing in Human-Computer Interaction 
-              and Cybersecurity <br /><br />
+              <strong>College: </strong>Oregon State University <br /> <br />
+            </p>
+            <p>
+              <strong>Major: </strong>Computer Science focusing in Human-Computer Interaction <br /><br />
             </p>
             <p>
               <strong>Interests in Tech: </strong>Just like outside of tech, I have a wide 
